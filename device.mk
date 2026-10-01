@@ -44,3 +44,12 @@ PRODUCT_SYSTEM_PROPERTIES += \
 
 # Call the proprietary setup
 $(call inherit-product, vendor/xiaomi/lisa/lisa-vendor.mk)
+
+# MiuiCamera
+$(call inherit-product, vendor/xiaomi/miuicamera-lisa/device.mk)
+
+# Optional face detection model shipped by PixelOS (proprietary, not tracked)
+ifneq ($(wildcard vendor/miuicamera-extras/facedetectpp_0_5_2_model),)
+PRODUCT_COPY_FILES += \
+    vendor/miuicamera-extras/facedetectpp_0_5_2_model:$(TARGET_COPY_OUT_VENDOR)/etc/camera/facedetectpp_0_5_2_model
+endif

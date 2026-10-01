@@ -38,3 +38,6 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Include proprietary files
 include vendor/xiaomi/lisa/BoardConfigVendor.mk
+
+# MiuiCamera
+include vendor/xiaomi/miuicamera-lisa/BoardConfig.mk
